@@ -153,10 +153,11 @@ function App() {
       </Modal>
 
       <div className="App__header">
+        <div className="logo">
         <img src="https://www.instagram.com/static/images/web/mobile_nav_type_logo.png/735145cfe0a4.png" alt="logo" className="app_headerImage" />
-      </div>
-
-      {user ? (
+        </div>
+        <div className="buttons__nav">
+        {user ? (
         <Button type="submit" onClick={() => auth.signOut()}>Logout</Button>
 
       ): (
@@ -166,12 +167,20 @@ function App() {
 
         </div>
       )}
+        </div>
 
+
+      </div>
+
+      <div className="container">
       {
         posts.map(({ id, post }) => (
           <Post key={id} username={post.username} caption={post.caption} imageUrl={post.imageUrl} />
         ))
       }
+
+      </div>
+
 
     </div>
   );
